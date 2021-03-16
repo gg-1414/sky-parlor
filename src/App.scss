@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+.playlist {
+  max-width: 70%;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+
+.LandingPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
