@@ -4,10 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import CMS from 'netlify-cms-app'
-// Initialize the CMS object
-CMS.init()
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
