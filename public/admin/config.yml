@@ -9,6 +9,7 @@ collections:
     folder: "content/playlists"
     create: true
     slug: "{{year}}-{{month}}-{{day}}"
+    description: "{{slug}}"
     fields:
       - { name: 'date', label: 'Publish Date', widget: 'datetime', format: 'YYYY-MM-DD' }
       - {label: "Body", name: "body", widget: "string"}
