@@ -5,12 +5,11 @@ import {
   Route,
 } from "react-router-dom";
 
-import Landing from './containers/Landing';
-import Home from './containers/Home';
-import Product from './containers/Product.js';
+import Landing from './pages/Landing';
+import Home from './pages/Home';
+import Product from './pages/Product';
+import Admin from './pages/Admin';
 import './App.scss';
-
-// const apiUrl = 'https://sky-parlor-admin.herokuapp.com';
 
 class App extends Component {
   constructor() {
@@ -20,13 +19,6 @@ class App extends Component {
       playlistEmbedCode: '',
     }
   }
-
-  // fetchPlaylist = async () => {
-  //   const res = await fetch(apiUrl + '/playlist/recent');
-  //   const playlist = await res.json();
-  //   this.setState({ playlistEmbedCode: playlist.embedCode });
-  //   console.log('playlist',playlist)
-  // };
 
   handleLandingClick = () => {
     this.setState({ showLanding: false, showMainPage: true });
@@ -38,12 +30,8 @@ class App extends Component {
   }
 
   render() {
-    // const { playlistEmbedCode, showLanding, showMainPage } = this.state;
-
     return (
       <div className="App">
-        {/* <div className="playlist" dangerouslySetInnerHTML={{ __html: playlistEmbedCode }} /> */}
-
         <Router>
           <Switch>
             <Route exact path="/product">
@@ -51,6 +39,9 @@ class App extends Component {
             </Route>
             <Route exact path="/home">
               <Home />
+            </Route>
+            <Route exact path="/admin">
+              <Admin />
             </Route>
             <Route path="/">
               <Landing />
