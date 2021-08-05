@@ -5,9 +5,9 @@ function onSubmit(e) {
 
 export default function SoundcloudForm() {
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="mt-10 flex-col">
       <h1>Soundcloud Playlist Dropoff</h1>
-      <textarea />
+      <textarea className="block w-full" />
       <button type="submit">Submit</button>
     </form>
   )

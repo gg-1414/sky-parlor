@@ -1,0 +1,20 @@
+.player {
+  max-height: 115px;
+  overflow: hidden;
+}
+.music-player-wrapper {
+  max-width: 500px;
+  width: calc(100vw - 2rem);
+  position: fixed;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.iframe {
+  height: 85px !important;
+}
+@media (min-width: 768px) {
+  .iframe {
+    height: 100px !important;
+  }
+}
