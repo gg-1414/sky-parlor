@@ -1,12 +1,23 @@
 import ProductList from '../components/ProductList';
 import Cart from '../components/Cart/index';
-import logo from '../assets/logo.gif';
+import logoGif from '../assets/logo.gif';
 import illustration1 from '../assets/illustration-1.png';
 import illustration2 from '../assets/illustration-2.png';
 import illustration3 from '../assets/illustration-3.png';
 import styles from '../styles/pages/Home.module.scss'
 import { ShopifyContext } from '../context/ShopifyContext';
 import CartIcon from '../components/Cart/CartIcon';
+import Cube from '../components/Cube';
+
+const Logo = () => {
+  return (
+    <img 
+      className={`${styles.logo} m-auto absolute -right-1 md:right-6 -top-2 md:top-0 z-10`}
+      src={logoGif} 
+      alt="sky parlor spinning logo"
+    />
+  );
+};
 
 export default function Home() {
   return (
@@ -16,11 +27,7 @@ export default function Home() {
           <div className={`${styles.Home} p-4 md:p-8`}>
             {/* <div className={`${styles.behind_logo_circle} ${styles.yellow}`}/> */}
             {/* <div className={`${styles.behind_logo_circle} ${styles.blue}`}/> */}
-            <img 
-              className={`${styles.logo} m-auto absolute right-6 top-0 z-10`}
-              src={logo} 
-              alt="sky parlor spinning logo"
-            />
+            <Logo />
             <img 
               className={`${styles.illustration} max-w-md absolute`}
               src={illustration1}
@@ -49,14 +56,11 @@ export default function Home() {
               removeLineItemInCart={removeLineItemInCart}
             />
             <div className={`${styles.Home} p-4 md:p-8`}>
-              <button className="absolute top-8 left-8 z-20" onClick={handleCartToggle}>
-                <CartIcon />
+              <button className="absolute top-2 -left-8 z-20 md:left-0" onClick={handleCartToggle}>
+                <Cube />
+                {/* <CartIcon /> */}
               </button>
-              <img 
-                className={`${styles.logo} m-auto absolute right-6 top-0 z-10`}
-                src={logo} 
-                alt="sky parlor spinning logo" 
-              />
+              <Logo />
               <img 
                 className={`${styles.illustration} max-w-md absolute`}
                 src={illustration1}

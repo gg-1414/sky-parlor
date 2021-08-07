@@ -1,6 +1,11 @@
 @import '../utils.scss';
 
 .cart_icon {
+  // border: 2px solid #611927;
+  // border-radius: 50%;
+  // padding: .5rem;
+  height: 100%;
+  width: 100%;
   path { fill: $primary; }
 }
 
