@@ -1,11 +1,27 @@
 .Home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo {
-  z-index: 2;
+  padding: calc(115px + 2rem) 0;
+  overflow: hidden;
+  width: 100vw;
   position: relative;
-  width: 400px;
-  margin-top: 6rem;
+  min-height: 150vh;
+
+  .illustration {
+    background: #6119272b;
+  }
+}
+
+.behind_logo_circle {
+  width: 43vh;
+  height: 43vh;
+  position: absolute;
+  top: -7rem;
+  right: -6rem;
+  border-radius: 50%;
+  background-color: #ffea9691;
+  z-index: 0;
+
+  @media (min-width: 768px) {
+    width: 350px;
+    height: 350px;
+  }
 }

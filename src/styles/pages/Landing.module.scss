@@ -1,0 +1,8 @@
+@import '../utils.scss';
+
+.label {
+  height: calc(40px + 1.5rem + 2px);
+  border-top: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  border-left: 1px solid $primary;
+}

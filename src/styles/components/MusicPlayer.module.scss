@@ -1,20 +1,115 @@
-.player {
-  max-height: 115px;
+@import "../utils.scss";
+
+.player_wrapper {
   overflow: hidden;
-}
-.music-player-wrapper {
-  max-width: 500px;
-  width: calc(100vw - 2rem);
-  position: fixed;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-.iframe {
-  height: 85px !important;
-}
-@media (min-width: 768px) {
-  .iframe {
-    height: 100px !important;
+  width: 100%;
+  height: calc(40px + 1.5rem + 2px);
+
+  @media (min-width: 768px) {
+    max-width: 50%;
   }
+}
+
+.player {
+	overflow: hidden;
+	position: relative;
+	transition: all linear .3s;
+  border-top: 1px solid $primary;
+  border-right: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+}
+
+.player_current {
+  grid-template-columns: 1fr auto;
+}
+
+.prev,
+.play,
+.next {
+  background: transparent;
+	border-radius: 40px;
+	cursor: pointer;
+	height: 40px;
+	position: relative;
+	transition: opacity .3s ease;
+	width: 40px;
+}
+
+.play:focus,
+.prev:focus,
+.next:focus {
+	outline: none;
+}
+
+.play:before,
+.play:after {
+	border-style: solid;
+	border-width: 10px 0 10px 16px;
+	border-color: transparent transparent transparent $primary;
+	content: "";
+	display: block;
+	left: 16px;
+	margin: 0 auto;
+	position: absolute;
+	top: 12px;
+}
+
+.pause:before,
+.pause:after {
+	border: none;
+	background-color: $primary;
+	height: 20px;
+	left: 15px;
+	width: 4px
+}
+
+.pause:after {
+	left: 25px;
+}
+
+
+.prev,
+.next {
+	opacity: .5;
+}
+
+.prev:hover,
+.next:hover {
+	opacity: .8;
+}
+
+.prev:before,
+.prev:after,
+.next:before,
+.next:after {
+	background: transparent;
+	border: 7px solid transparent;
+	border-width: 7px 9px;
+	border-left-color: $primary;
+	content: "";
+	margin-top: -6px;
+	position: absolute;
+	top: 50%;
+}
+
+.prev:before,
+.prev:after {
+	border-left-color: transparent;
+	border-right-color: $primary;
+}
+
+.prev:before {
+	left: 2px;
+}
+
+.prev:after {
+	left: 11px;
+}
+
+.next:before {
+	left: 14px;
+}
+
+.next:after {
+	left: 23px;
 }

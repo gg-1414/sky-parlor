@@ -1,6 +1,7 @@
 import React from 'react';
 import { FirestoreContext } from '../context/FirestoreContext';
-import SoundCloud from 'react-custom-soundcloud';
+// import SoundCloud from 'react-custom-soundcloud';
+import Soundcloud from './Soundcloud';
 import 'react-custom-soundcloud/dist/style.css';
 import styles from '../styles/components/MusicPlayer.module.scss';
 
@@ -16,16 +17,13 @@ export default function MusicPlayer() {
           const playlistId = sliced.slice('/playlists/'.length)
 
           return (
-            <>
-              {/* <div className={"music-player-wrapper"} dangerouslySetInnerHTML={{__html: soundcloudUrl}} /> */}
-              <div className={styles.player}>
-                <SoundCloud
-                  playlist={playlistId}
-                  mini={true}
-                />
-              </div>
-              
-            </>
+            <div className={`${styles.player_wrapper} fixed bottom-0 left-0 z-20`}>
+              {/* <SoundCloud
+                playlist={playlistId}
+                mini={true}
+              /> */}
+              <Soundcloud playlist={playlistId} />
+            </div>
           )
         }
       }}
