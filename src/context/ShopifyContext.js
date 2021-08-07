@@ -4,23 +4,47 @@ import shopifyClient from '../lib/Shopify';
 const baseState = {
   client: null,
   products: [],
-  // isCartOpen: false,
-  // checkout: { lineItems: [] },
+  checkout: { lineItems: [] },
+  isCartOpen: false,
+  handleCartToggle: () => {},
+  updateQuantityInCart: async () => {},
+  removeLineItemInCart: async () => {},
 }
-
-// class Shopify extends React.component {
-//   constructor() {
-//     super();
-
-//     this.state = baseState;
-//   }
-
-//   componentDidMount()
-// }
 
 const Shopify = () => {
   const [client, setClient] = useState(null);
   const [products, setProducts] = useState([]);
+  const [checkout, setCheckout] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const handleCartToggle = () => {
+    console.log('handleCartToggle!')
+    setIsCartOpen(!isCartOpen);
+  }
+
+  async function updateQuantityInCart(lineItemId, quantity) {
+    if (!client) return;
+    const checkoutId = checkout.id;
+    const lineItemsToUpdate = [{id: lineItemId, quantity: parseInt(quantity, 10)}];
+
+    try {
+      const checkout = await client.checkout.updateLineItems(checkoutId, lineItemsToUpdate);
+      setCheckout(checkout);
+    } catch (err) {
+      console.error('Error updating line items: ', err);
+    }
+  }
+
+  async function removeLineItemInCart(lineItemId) {
+    if (!client) return;
+    const checkoutId = checkout.id;
+    try {
+      const checkout = await client.checkout.removeLineItems(checkoutId, [lineItemId]);
+      setCheckout(checkout);
+    } catch (err) {
+      console.error('Error removing line item: ', err);
+    }
+  }
 
   useEffect(() => {
     setClient(shopifyClient);
@@ -29,26 +53,40 @@ const Shopify = () => {
   useEffect(() => {
     async function fetchProducts() {
       if (!client) return;
-
-      const products = await client.product.fetchAll();
-      setProducts(products)
-      return products;
+      try {
+        const products = await client.product.fetchAll();
+        setProducts(products);
+      } catch (err) {
+        console.error('Error fetching products: ', err);
+      }
     }
 
-    fetchProducts()
-  }, [client])
+    async function createCheckout() {
+      if (!client) return;
+      try {
+        const checkout = await client.checkout.create();
+        setCheckout(checkout)
+      } catch (err) {
+        console.log('Error creating checkout: ', err);
+      }
+    }
 
-  useEffect(() => {
-    console.log('products in useEffect3', products)
-  }, [products])
+    fetchProducts();
+    createCheckout();
+  }, [client])
 
   return {
     client,
     products,
+    checkout,
+    isCartOpen,
+    handleCartToggle,
+    updateQuantityInCart,
+    removeLineItemInCart,
   }
 }
 
-export const ShopifyContext = React.createContext(baseState)
+export const ShopifyContext = React.createContext(baseState);
 
 export function ShopifyProvider({ children }) {
   return (

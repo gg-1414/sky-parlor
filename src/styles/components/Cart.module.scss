@@ -1,0 +1,140 @@
+@import '../utils.scss';
+
+.cart_icon {
+  path { fill: $primary; }
+}
+
+.Cart {
+  @include bgTexture;
+  background-size: 500% auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 350px;
+  border-left: 4px solid $primary;
+  transform: translateX(100%);
+  transition: transform 0.15s ease-in-out;
+  z-index: 30;
+  box-shadow: -4px 0px 11px 0px #d19f9d;
+}
+
+.Cart_open {
+  transform: translateX(0);
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 4px solid $primary;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+
+  h2 {
+    margin-bottom: 0;
+    font-weight: 900;
+  }
+}
+
+.close {
+  color: $primary;
+  border: none;
+  background: transparent;
+  transition: transform 100ms ease;
+  cursor: pointer;
+  font-size: 64px;
+  font-weight: 900;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  margin: 0;
+  margin-left: auto;
+}
+
+.line_items {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 20px;
+  overflow: scroll;
+}
+
+// LINE ITEM
+.line_item {
+  margin-bottom: 20px;
+  overflow: hidden;
+  backface-visibility: visible;
+  min-height: 65px;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.line_item_img {
+  width: 65px;
+  height: 65px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.line_item_content {
+  width: 100%;
+  padding-left: 75px;
+}
+
+.line_item_row {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.line_item_variant_title {
+  float: right;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 0 8px;
+}
+
+.line_item_title {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.line_item_quantity_container {
+  border: 1px solid $primary;
+  float: left;
+}
+
+.line_item_price {
+  line-height: 23px;
+  float: right;
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 40px;
+}
+
+.line_item_remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  background: 0;
+  font-size: 20px;
+  top: -4px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}

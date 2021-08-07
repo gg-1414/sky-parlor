@@ -1,3 +1,5 @@
+@import '../utils.scss';
+
 .Home {
   padding: calc(115px + 2rem) 0;
   overflow: hidden;
@@ -5,8 +7,22 @@
   position: relative;
   min-height: 150vh;
 
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    @include bgTexture;
+    // filter: hue-rotate(321deg);
+    z-index: 0;
+  }
+
   .illustration {
     background: #6119272b;
+    opacity: 0.8;
   }
 }
 
@@ -14,7 +30,7 @@
   width: 43vh;
   height: 43vh;
   position: absolute;
-  top: -7rem;
+  top: -10rem;
   right: -6rem;
   border-radius: 50%;
   background-color: #ffea9691;
@@ -24,4 +40,14 @@
     width: 350px;
     height: 350px;
   }
+}
+
+.blue {
+  background-color: #96efff80;
+  z-index: 1;
+  right: 2rem;
+}
+
+.logo {
+  max-width: 14rem;
 }

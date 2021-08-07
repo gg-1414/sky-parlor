@@ -1,1 +1,12 @@
 $primary: #611827;
+$pink: #ebbdba;
+
+@mixin bgTexture() {
+  background: {
+    color: $pink;
+    image: url('../assets/bg-texture.png');
+    repeat: repeat;
+    size: cover;
+    position: top center;
+  }
+}
