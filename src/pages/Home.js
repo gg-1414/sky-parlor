@@ -6,7 +6,6 @@ import illustration2 from '../assets/illustration-2.png';
 import illustration3 from '../assets/illustration-3.png';
 import styles from '../styles/pages/Home.module.scss'
 import { ShopifyContext } from '../context/ShopifyContext';
-import CartIcon from '../components/Cart/CartIcon';
 import Cube from '../components/Cube';
 
 const Logo = () => {
@@ -58,7 +57,6 @@ export default function Home() {
             <div className={`${styles.Home} p-4 md:p-8`}>
               <button className="absolute top-2 -left-8 z-20 md:left-0" onClick={handleCartToggle}>
                 <Cube />
-                {/* <CartIcon /> */}
               </button>
               <Logo />
               <img 
