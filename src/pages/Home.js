@@ -11,7 +11,7 @@ import Cube from '../components/Cube';
 const Logo = () => {
   return (
     <img 
-      className={`${styles.logo} m-auto absolute -right-1 md:right-6 -top-2 md:top-0 z-10`}
+      className={`${styles.logo} m-auto fixed -right-1 md:right-6 top-1 md:top-0 z-10`}
       src={logoGif} 
       alt="sky parlor spinning logo"
     />
@@ -55,28 +55,28 @@ export default function Home() {
               removeLineItemInCart={removeLineItemInCart}
             />
             <div className={`${styles.Home} p-4 md:p-8`}>
-              <button className="absolute top-2 -left-8 z-20 md:left-0" onClick={handleCartToggle}>
+              <button className="fixed top-2 -left-8 z-20 md:left-0" onClick={handleCartToggle}>
                 <Cube />
               </button>
               <Logo />
-              <div className="relative md:grid md:grid-cols-3 md:gap-1">
+              <div className="relative grid md:grid-cols-3 gap-1">
                 <img 
-                  className={`${styles.illustration} w-full px-10 py-2 pt-10 md:py-6`}
+                  className={`${styles.illustration} w-full px-10 py-6 pt-10 md:py-6`}
                   src={illustration1}
                   alt="Sky parlor illustration"
                 />
                 <img 
-                  className={`${styles.illustration} w-full px-10 py-2 md:py-6`}
+                  className={`${styles.illustration} w-full px-10 py-6 md:py-6`}
                   src={illustration2}
                   alt="Sky parlor illustration"
                 />
                 <img 
-                  className={`${styles.illustration} w-full px-10 py-2 pl-12 md:py-6 md:px-10`}
+                  className={`${styles.illustration} w-full px-10 py-6 pl-12 md:py-6 md:px-10`}
                   src={illustration3}
                   alt="Sky parlor illustration"
                 />
               </div>
-              <div className="relative flex-col items-center gap-10 p-6 md:p-12 xl:p-14">
+              <div className="relative flex-col items-center gap-10 p-8 md:p-12 xl:p-14">
                 <h2 className="text-4xl md:text-4xl text-left mt-4 md:mt-8 xl:mt-12 text-center">SHOP</h2>
                 <ProductList products={products} />
               </div>

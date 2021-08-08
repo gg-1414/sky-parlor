@@ -37,5 +37,9 @@
 }
 
 .logo {
-  max-width: 14rem;
+  max-width: 12rem;
+
+  @media (min-width: 768px) {
+    max-width: 14rem;
+  }
 }
