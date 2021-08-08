@@ -6,7 +6,12 @@ $pink: #ebbdba;
     color: $pink;
     image: url('../assets/bg-texture.png');
     repeat: repeat;
-    size: cover;
+    size: 500% auto;
+    // auto 100% => width auto, height 100%
     position: top center;
+  }
+
+  @media (min-width: 768px) {
+    background-size: cover;
   }
 }

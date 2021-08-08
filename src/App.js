@@ -14,8 +14,9 @@ import Product from './pages/Product';
 import Admin from './pages/Admin';
 import './App.scss';
 
-export default function App({ shopifyClient }) {
-  console.log('shopifyClient',shopifyClient)
+export default function App() {
+  console.log("%cHMU <3 \nhttps://gina-lee.com", "background:#ebbdba;color:#611827;padding:1rem;font-size:20px");
+
   return (
     <FirestoreProvider>
       <ShopifyProvider>

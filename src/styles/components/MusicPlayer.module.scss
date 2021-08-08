@@ -4,8 +4,9 @@
   overflow: hidden;
   width: 100%;
   height: calc(40px + 1.5rem + 2px);
+	@include bgTexture;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     max-width: 50%;
   }
 }
@@ -17,6 +18,7 @@
   border-top: 1px solid $primary;
   border-right: 1px solid $primary;
   border-bottom: 1px solid $primary;
+	background: #6119272b;
 }
 
 .player_current {

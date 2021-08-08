@@ -59,23 +59,25 @@ export default function Home() {
                 <Cube />
               </button>
               <Logo />
-              <img 
-                className={`${styles.illustration} max-w-md absolute`}
-                src={illustration1}
-                alt="Sky parlor illustration"
-              />
-              <img 
-                className={`${styles.illustration} max-w-md absolute bottom-10 right-0`}
-                src={illustration2}
-                alt="Sky parlor illustration"
-              />
-              <img 
-                className={`${styles.illustration} max-w-md absolute bottom-10 left-5`}
-                src={illustration3}
-                alt="Sky parlor illustration"
-              />
-              <div className="relative flex items-center gap-10">
-                <h2 className="text-4xl md:text-8xl text-left mt-4">SHOP</h2>
+              <div className="relative md:grid md:grid-cols-3 md:gap-1">
+                <img 
+                  className={`${styles.illustration} w-full px-10 py-2 pt-10 md:py-6`}
+                  src={illustration1}
+                  alt="Sky parlor illustration"
+                />
+                <img 
+                  className={`${styles.illustration} w-full px-10 py-2 md:py-6`}
+                  src={illustration2}
+                  alt="Sky parlor illustration"
+                />
+                <img 
+                  className={`${styles.illustration} w-full px-10 py-2 pl-12 md:py-6 md:px-10`}
+                  src={illustration3}
+                  alt="Sky parlor illustration"
+                />
+              </div>
+              <div className="relative flex-col items-center gap-10 p-6 md:p-12 xl:p-14">
+                <h2 className="text-4xl md:text-4xl text-left mt-4 md:mt-8 xl:mt-12 text-center">SHOP</h2>
                 <ProductList products={products} />
               </div>
             </div>
