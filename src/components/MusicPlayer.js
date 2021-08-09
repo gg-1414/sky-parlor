@@ -16,9 +16,12 @@ export default function MusicPlayer() {
               return -1;
             }
           })
+          console.log('latestPlaylist', latestPlaylist)
 
           const soundcloudUrl = latestPlaylist[0].data().soundcloudUrl
+          console.log('soundcloudUrl', soundcloudUrl)
           const playlistId = getPlaylistIdFromIframeScript(soundcloudUrl);
+          console.log('playlistId', playlistId)
 
           if (playlistId) {
             return (
