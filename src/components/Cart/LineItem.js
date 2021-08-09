@@ -57,7 +57,7 @@ export default function LineItem({ item, updateQuantityInCart, removeLineItemInC
 
           <button
             className={styles.line_item_remove}
-            onClick={removeLineItemInCart(item.id)}
+            onClick={() => removeLineItemInCart(item.id)}
           >
             x
           </button>

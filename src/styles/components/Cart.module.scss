@@ -45,14 +45,12 @@
   transition: transform 100ms ease;
   cursor: pointer;
   font-size: 64px;
-  font-weight: 900;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   line-height: 0;
   margin: 0;
   margin-left: auto;
+  position: relative;
+  top: 5px;
 }
 
 .line_items {

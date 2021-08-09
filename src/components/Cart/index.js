@@ -9,36 +9,40 @@ export default function Cart({
   removeLineItemInCart,
 }) {
 
-  let lineItems = [];
+  const getLineItems = () => {
+    if (checkout.lineItems) {
+      const lineItems = checkout.lineItems.map((it) => {
+        return (
+          <LineItem
+            key={it.id.toString()}
+            item={it}
+            updateQuantityInCart={updateQuantityInCart}
+            removeLineItemInCart={removeLineItemInCart}
+          />
+        );
+      });
 
-  if (checkout) {
-    lineItems = checkout.lineItems?.map(it => {
-      return (
-        <LineItem
-          key={it.id.toString()}
-          item={it}
-          updateQuantityInCart={updateQuantityInCart}
-          removeLineItemInCart={removeLineItemInCart}
-        />
-      )
-    })
+      if (lineItems.length) return lineItems;
+      return <span>There are no items in your cart.</span>;
+    };
   }
 
-  if (lineItems) {
+  if (checkout) {
     return (
       <div className={`${styles.Cart} ${isCartOpen ? styles.Cart_open : null}`}>
-        <header className={styles.header}>
-          <h2>Your cart</h2>
+        <header className={`${styles.header}`}>
+          <h2 className="text-xl">YOUR CART</h2>
           <button onClick={handleCartToggle} className={styles.close}>
             x
           </button>
         </header>
         <ul className={styles.line_items}>
-          {lineItems.length >= 1 ? lineItems : 'There are no items in your cart'}
+          {getLineItems()}
         </ul>
       </div>
     );
+  } else {
+    return <div></div>
   }
 
-  return <div className={styles.Cart}></div>
 };

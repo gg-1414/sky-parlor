@@ -1,0 +1,97 @@
+@import '../utils.scss';
+
+.react-3d-carousel {
+  overflow: hidden;
+  width: 100vw;
+  height: 68vw !important;
+  max-height: 68vw !important;
+  
+  @media (min-width: 1280px) {
+    width: 50vw !important;
+    max-height: initial !important;
+    height: 100% !important;
+    overflow: scroll;
+  }
+
+  .slider-container {
+    width: 100% !important;
+    left: 0 !important;
+    position: relative !important;
+    margin: 0 auto !important;
+  }
+  
+  .slider-content {
+    left: 0 !important;
+    transform: initial !important;
+    width: 100vw;
+  
+    @media (min-width: 1280px) {
+      width: 50vw;
+    }
+  
+    img {
+      object-fit: cover;
+      width: 100vw;
+  
+      @media (min-width: 1280px) {
+        width: 50vw;
+        height: 100vh;
+      }
+    }
+
+    .slider-single:not(.active) {
+      opacity: 0 !important;
+    }
+  
+    .slider-single.active {
+      width: 100vw !important;
+  
+      @media (min-width: 1280px) {
+        width: 50vw !important;
+        height: 100vh;
+      }
+    }
+  
+    .slider-single-content {
+      max-height: 300px;
+      width: 100vw;
+
+      @media (min-width: 768px) {
+        max-height: 600px;
+      }
+      
+      @media (min-width: 1280px) {
+        height: 100vh;
+        max-height: initial;
+      }
+    }
+
+    .slider-right,
+    .slider-left {
+      padding: 20px 1.5rem;
+      > div {
+        border: none;
+
+        i {
+          font-size: 2rem;
+          color: $primary;
+        }
+      }
+    }
+  
+    .slider-left {
+      left: 0;
+    }
+  
+    .slider-right {
+      right: 0;
+      left: initial !important;
+    }
+  
+    > * {
+      > * {
+        overflow: hidden;
+      }
+    }
+  }
+}

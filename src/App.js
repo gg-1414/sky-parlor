@@ -24,14 +24,14 @@ export default function App() {
           <MusicPlayer />
           <Router>
             <Switch>
-              <Route exact path="/product">
-                <Product />
-              </Route>
               <Route exact path="/home">
                 <Home />
               </Route>
               <Route exact path="/admin">
                 <Admin />
+              </Route>
+              <Route path="/product">
+                <Product />
               </Route>
               <Route path="/">
                 <Landing />

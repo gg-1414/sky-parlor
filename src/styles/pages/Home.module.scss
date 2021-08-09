@@ -6,6 +6,8 @@
   width: 100vw;
   position: relative;
   height: 100%;
+  max-height: 100vh;
+  overflow: scroll;
 
   .illustration {
     background: #6119272b;
@@ -34,12 +36,4 @@
   background-color: #96efff80;
   z-index: 1;
   right: 2rem;
-}
-
-.logo {
-  max-width: 12rem;
-
-  @media (min-width: 768px) {
-    max-width: 14rem;
-  }
 }

@@ -83,7 +83,6 @@ export default function Soundcloud({ playlist }) {
     <div className={`${styles.player} py-3 px-4`}>
       {currentTrack && (
         <div className={`${styles.player_current} grid w-full items-center z-20 relative sm:gap-2`}>
-          {/* <div className={styles.logo} /> */}
           <Title permalink={currentTrack.permalinkUrl} title={currentTrack.title} />
           <Buttons
             setCurrentTrack={setCurrentTrack}
