@@ -6,13 +6,19 @@ import styles from '../styles/components/MusicPlayer.module.scss';
 export default function MusicPlayer() {
   return (
     <FirestoreContext.Consumer>
-      {({ collection }) => {
+      {({ collection, getPlaylistIdFromIframeScript }) => {
+
         if (collection) {
-          const soundcloudUrl = collection.docs[0].data().soundcloudUrl
-          const playlistsIndex = soundcloudUrl.indexOf('/playlists/')
-          const colorIndex = soundcloudUrl.indexOf('&color')
-          const sliced = soundcloudUrl.slice(playlistsIndex, colorIndex);
-          const playlistId = sliced.slice('/playlists/'.length)
+          const latestPlaylist = collection.docs.sort((a, b) => {
+            if (a.data().timestamp < b.data().timestamp) {
+              return 1;
+            } else {
+              return -1;
+            }
+          })
+
+          const soundcloudUrl = latestPlaylist[0].data().soundcloudUrl
+          const playlistId = getPlaylistIdFromIframeScript(soundcloudUrl);
 
           return (
             <div className={`${styles.player_wrapper} fixed bottom-0 left-0 z-20`}>

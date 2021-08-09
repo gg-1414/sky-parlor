@@ -1,0 +1,28 @@
+@import '../utils.scss';
+
+.admin {
+  min-height: 100vh;
+}
+
+.logo {
+  max-width: 300px;
+  margin: auto;
+}
+
+.logout_btn {
+  text-decoration: underline;
+}
+
+.form {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  textarea {
+    min-height: 200px;
+  }
+
+  button {
+    @include primaryBtn;
+  }
+}
