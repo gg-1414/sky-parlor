@@ -18,7 +18,8 @@ export default function Landing() {
           className="object-cover m-0 h-screen w-full"
         />
       </Link>
-      <div className={`${styles.label} absolute w-full px-4 top-0 right-0 flex items-center justify-center z-20"`}>
+      <div className={`${styles.label} absolute w-full px-4 top-0 right-0 flex items-center justify-between z-20"`}>
+        <Link to="/admin" className="underline text-xs">Admin</Link>
         <Link to="/home" className="underline cursor-pointer text-xs md:text-sm">Click anywhere to continue</Link>
       </div>
     </div>
