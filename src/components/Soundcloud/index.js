@@ -15,8 +15,7 @@ export default function Soundcloud({ playlist }) {
         [soundcloud, setSoundcloud] = useState(null),
         [sounds, setSounds] = useState([]),
         [trackIndex, setTrackIndex] = useState(0),
-        [trackPlaying, setTrackPlaying] = useState(false),
-        [playProgress, setPlayProgress] = useState({ currentPosition: 0 });
+        [trackPlaying, setTrackPlaying] = useState(false);
 
   const iframeRef = useRef(null);
 
@@ -59,9 +58,6 @@ export default function Soundcloud({ playlist }) {
     })
     soundcloud.bind(window.SC.Widget.Events.PLAY, () => {
       setTrackPlaying(true);
-    })
-    soundcloud.bind(window.SC.Widget.Events.PLAY_PROGRESS, (progress) => {
-      setPlayProgress(progress);
     })
   }, [soundcloud]);
 
