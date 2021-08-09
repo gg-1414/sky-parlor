@@ -31,7 +31,7 @@ export default function MusicPlayer() {
           }
 
           const latestPlaylist = getLatestPlaylist();
-          // console.log('latestPlaylist', latestPlaylist)
+          console.log('latestPlaylist', latestPlaylist)
 
           const soundcloudUrl = latestPlaylist[0].data().soundcloudUrl
           console.log('soundcloudUrl', soundcloudUrl)
