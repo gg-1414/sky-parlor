@@ -20,13 +20,20 @@ export default function MusicPlayer() {
           const soundcloudUrl = latestPlaylist[0].data().soundcloudUrl
           const playlistId = getPlaylistIdFromIframeScript(soundcloudUrl);
 
-          return (
-            <div className={`${styles.player_wrapper} fixed bottom-0 left-0 z-20`}>
-              <Soundcloud playlist={playlistId} />
-            </div>
-          )
+          if (playlistId) {
+            return (
+              <div className={`${styles.player_wrapper} fixed bottom-0 left-0 z-20`}>
+                <Soundcloud playlist={playlistId} />
+              </div>
+            );
+          } else {
+            return (
+              <div className="music_player_empty" />
+            );
+          };
+
         }
       }}
     </FirestoreContext.Consumer>
-  )
-}
+  );
+};
