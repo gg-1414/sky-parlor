@@ -16,8 +16,7 @@ export default function Soundcloud({ playlist }) {
         [sounds, setSounds] = useState([]),
         [trackIndex, setTrackIndex] = useState(0),
         [trackPlaying, setTrackPlaying] = useState(false),
-        [playProgress, setPlayProgress] = useState({ currentPosition: 0 }),
-        [percentPlayed, setPercentPlayed] = useState(0);
+        [playProgress, setPlayProgress] = useState({ currentPosition: 0 });
 
   const iframeRef = useRef(null);
 
@@ -51,6 +50,8 @@ export default function Soundcloud({ playlist }) {
         const tracks = sounds.filter(sound => sound.hasOwnProperty('title'));
         setSounds(tracks);
         setCurrentTrack(tracks[0], 0);
+        setTrackPlaying(true);
+        soundcloud.play();
       })
     })
     soundcloud.bind(window.SC.Widget.Events.PAUSE, () => {
@@ -63,21 +64,6 @@ export default function Soundcloud({ playlist }) {
       setPlayProgress(progress);
     })
   }, [soundcloud]);
-
-  useEffect(() => {
-    if (!currentTrack) {
-      return
-    };
-    const position = Number(((playProgress.currentPosition / currentTrack.duration) * 100).toFixed(1));
-    setPercentPlayed(position);
-  }, [currentTrack, playProgress]);
-
-  useEffect(() => {
-    if (!soundcloud || !sounds || !currentTrack) {
-      return;
-    }
-    // soundcloud.play();
-  }, [soundcloud, sounds, currentTrack])
 
   return (
     <div className={`${styles.player} py-3 px-4`}>
