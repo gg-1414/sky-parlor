@@ -36,9 +36,14 @@ export default function Cart({
             x
           </button>
         </header>
-        <ul className={styles.line_items}>
+
+        <ul className={`${styles.line_items} p-6`}>
           {getLineItems()}
         </ul>
+
+        <div className="px-6 absolute bottom-6 w-full">
+          <button className={styles.checkout_btn} onClick={() => window.open(checkout.webUrl)}>CHECKOUT</button>
+        </div>
       </div>
     );
   } else {

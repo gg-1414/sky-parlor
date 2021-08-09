@@ -42,9 +42,7 @@
 }
 
 .add_to_cart_btn {
-  border: 1px solid $primary;
-  background-color: #ffea9691;
-
+  @include primaryBtn;
   &:disabled {
     background: #0000004a;
     opacity: .8;

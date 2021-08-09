@@ -1,6 +1,7 @@
 import styles from '../../styles/components/Cart.module.scss';
 
 export default function LineItem({ item, updateQuantityInCart, removeLineItemInCart }) {
+  console.log('item',item)
 
   const decrementQuantity = (lineItemId) => {
     const updatedQuantity = item.quantity - 1;
@@ -37,23 +38,23 @@ export default function LineItem({ item, updateQuantityInCart, removeLineItemInC
         <div className={styles.line_item_row}>
           <div className={styles.line_item_quantity_container}>
             <button 
-              className="Line-item__quantity-update" 
+              className={styles.line_item_quantity_update}
               onClick={() => decrementQuantity(item.id)}
             >
               -
             </button>
 
-            <span className="Line-item__quantity">{item.quantity}</span>
+            <span className={styles.line_item_quantity}>{item.quantity}</span>
 
             <button 
-              className="Line-item__quantity-update"
+              className={styles.line_item_quantity_update}
               onClick={() => incrementQuantity(item.id)}
             >
               +
             </button>
           </div>
 
-          <span className={styles.line_item_price}>$</span>
+          <span className={styles.line_item_price}>${item.variant.price}</span>
 
           <button
             className={styles.line_item_remove}

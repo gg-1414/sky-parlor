@@ -15,3 +15,10 @@ $pink: #ebbdba;
     background-size: cover;
   }
 }
+
+@mixin primaryBtn() {
+  border: 1px solid $primary;
+  background-color: #ffea9691;
+  padding: 1.5rem;
+  width: 100%;
+}
