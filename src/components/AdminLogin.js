@@ -1,8 +1,10 @@
-// import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import styles from '../styles/pages/Admin.module.scss';
 import logoGif from '../assets/logo.gif';
 
 export default function AdminLogin({ login }) {
+  const [errorMessage, setErrorMessage] = useState('');
+
   async function onSubmit(e) {
     e.preventDefault();
 
@@ -10,10 +12,10 @@ export default function AdminLogin({ login }) {
     const password = e.target.password.value;
 
     try {
-      const res = await login(email, password);
-      console.log('res',res)
+      await login(email, password);
     } catch (err) {
-      console.error("error signing in: ", err)
+      console.error("Error signing in: ", err)
+      setErrorMessage(`*${err.message}`);
     }
   }
 
@@ -38,6 +40,11 @@ export default function AdminLogin({ login }) {
         />
         <button type="submit" className="mt-4">Submit</button>
       </form>
+
+      {errorMessage
+        ? <div className="transition duration-300 w-full p-2 text-center text-red-500 relative mb-4">{errorMessage}</div> 
+        : null
+      }
 
       <a href="/" className="relative">
         <i class="fa fa-arrow-left pr-4" />

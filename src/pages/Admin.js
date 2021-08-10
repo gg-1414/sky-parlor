@@ -7,11 +7,20 @@ export default function Admin() {
   return (
     <AuthProvider>
       <AuthContext.Consumer>
-        {({ authUser, loading, error, login, logout }) => {
-          console.log('authUser', authUser, 'loading', loading, 'error',error)
+        {({ 
+          authUser, 
+          loading, 
+          error,
+          login, 
+          logout,
+        }) => {
           if (!authUser && !loading && !error) {
             return (
-              <AdminLogin login={login} />
+              <AdminLogin 
+                login={login} 
+                loading={loading}
+                error={error} 
+              />
             )
           } else if (authUser && !loading && !error) {
             return (

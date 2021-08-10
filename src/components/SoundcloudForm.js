@@ -24,12 +24,12 @@ export default function SoundcloudForm() {
             </form>
 
             {successMessage
-              ? <div className="transition duration-300 w-full top-0 p-2 text-center text-green-500">{successMessage}</div> 
+              ? <div className="transition duration-300 w-full p-2 text-center text-green-500">{successMessage}</div> 
               : null
             }
 
             {errorMessage
-              ? <div className="transition duration-300 w-full top-0 p-2 text-center text-red-500">{errorMessage}</div> 
+              ? <div className="transition duration-300 w-full p-2 text-center text-red-500">{errorMessage}</div> 
               : null
             }
 
