@@ -50,7 +50,10 @@ export default function Soundcloud({ playlist }) {
         setSounds(tracks);
         setCurrentTrack(tracks[0], 0);
         setTrackPlaying(true);
-        soundcloud.play();
+        
+        setTimeout(() => {
+          soundcloud.play();
+        }, 2000)
       })
     })
     soundcloud.bind(window.SC.Widget.Events.PAUSE, () => {
