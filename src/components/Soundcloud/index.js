@@ -41,7 +41,7 @@ export default function Soundcloud({ playlist }) {
 
   useEffect(() => {
     if (!soundcloud) {
-      return
+      return;
     };
 
     soundcloud.bind(window.SC.Widget.Events.READY, function() {
@@ -51,7 +51,10 @@ export default function Soundcloud({ playlist }) {
         setCurrentTrack(tracks[0], 0);
 
         soundcloud.isPaused((paused) => {
-          if (paused) soundcloud.play();
+          if (paused) {
+            soundcloud.play();
+            setTrackPlaying(true);
+          };
         })
       })
 
