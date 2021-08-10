@@ -9,29 +9,15 @@ export default function MusicPlayer() {
       {({ collection, getPlaylistIdFromIframeScript }) => {
 
         if (collection) {
-          const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-              const latestPlaylist = collection.docs.sort((a, b) => {
-                if (a.data().timestamp < b.data().timestamp) {
-                  return 1;
-                } else {
-                  return -1;
-                }
-              })
-
-              if (resolve) {
-                return latestPlaylist;
-              }
-            }, 5000)
+          const latestPlaylist = collection.docs.sort((a, b) => {
+            if (a.data().timestamp < b.data().timestamp) {
+              return 1;
+            } else {
+              return -1;
+            }
           })
-
-          async function getLatestPlaylist() {
-            const res = await promise;
-            console.log('res', res)
-          }
-
-          const latestPlaylist = getLatestPlaylist();
           console.log('latestPlaylist', latestPlaylist)
+          console.log('latestPlaylist[0].data()', latestPlaylist[0].data())
 
           const soundcloudUrl = latestPlaylist[0].data().soundcloudUrl
           console.log('soundcloudUrl', soundcloudUrl)

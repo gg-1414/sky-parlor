@@ -7,7 +7,6 @@ $pink: #ebbdba;
     image: url('../assets/bg-texture.png');
     repeat: repeat;
     size: 500% auto;
-    // auto 100% => width auto, height 100%
     position: top center;
   }
 
@@ -21,4 +20,10 @@ $pink: #ebbdba;
   background-color: #ffea9691;
   padding: 1.5rem;
   width: 100%;
+
+  &:disabled {
+    background: #0000004a;
+    opacity: .8;
+    cursor: not-allowed;
+  }
 }

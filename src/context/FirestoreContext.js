@@ -3,7 +3,8 @@ import firebase from '../lib/Firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 const State = () => {
-  const [ successMessage, setSuccessMessage ] = useState(null);
+  const [ successMessage, setSuccessMessage ] = useState('');
+  const [ errorMessage, setErrorMessage ] = useState('');
   const [collection, loading, error] = useCollection(
     firebase.firestore().collection('playlists'),
     {snapshotListenOptions: { includeMetadataChanges: true}}
@@ -25,6 +26,7 @@ const State = () => {
         .add({ soundcloudUrl, timestamp: Date.now() })
 
       if (res) {
+        setErrorMessage('');
         setSuccessMessage('Success!');
       }
     } catch (err) {
@@ -37,6 +39,9 @@ const State = () => {
     loading,
     error,
     successMessage,
+    errorMessage,
+    setSuccessMessage,
+    setErrorMessage,
     getPlaylistIdFromIframeScript,
     addDocument,
   }
@@ -46,6 +51,10 @@ export const FirestoreContext = React.createContext({
   collection: null,
   loading: true,
   error: null,
+  successMessage: null,
+  errorMessage: null,
+  setSuccessMessage: () => {},
+  setErrorMessage: () => {},
   getPlaylistIdFromIframeScript: () => '',
   addDocument: async () => {},
 })
