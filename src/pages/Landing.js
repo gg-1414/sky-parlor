@@ -1,34 +1,11 @@
-// import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import bgVideo from '../assets/sky-bg-spinning-logo.mp4';
 import styles from '../styles/pages/Landing.module.scss';
 
 export default function Landing() {
-  if (localStorage.getItem('sp_shopify_product')) {
-    localStorage.removeItem('sp_shopify_product');
-  }
-
-  // const videoRef = useRef(null);
-
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     const video = videoRef.current;
-  //     video.play();
-  //   }
-  // }, [])
-  
   return (
     <div className="relative">
       <Link to="/home">
-        {/* <video 
-          src={bgVideo} 
-          autoPlay 
-          muted
-          loop
-          className="object-cover m-0 h-screen w-full"
-          ref={videoRef}
-        /> */}
-
         <div
           className="object-cover m-0 h-screen w-full"
           dangerouslySetInnerHTML={{

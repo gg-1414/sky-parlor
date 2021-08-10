@@ -49,11 +49,11 @@ export default function Soundcloud({ playlist }) {
         const tracks = sounds.filter(sound => sound.hasOwnProperty('title'));
         setSounds(tracks);
         setCurrentTrack(tracks[0], 0);
-        setTrackPlaying(true);
         
         setTimeout(() => {
           soundcloud.play();
-        }, 2000)
+          setTrackPlaying(true);
+        }, 3000)
       })
     })
     soundcloud.bind(window.SC.Widget.Events.PAUSE, () => {
