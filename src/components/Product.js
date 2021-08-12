@@ -13,7 +13,7 @@ export default function Product({ product }) {
   }
 
   return (
-    <div className={`${styles.product}`}>
+    <div className={`${styles.product} mx-auto`}>
       <Link to={`/product/${product.id}`} onClick={onProductClick}>
         <div className={styles.image_wrapper}>
           <img 
@@ -26,5 +26,5 @@ export default function Product({ product }) {
         <h3 className="md:text-4 uppercase">{product.title} - ${product.variants[0].price}</h3>
       </div>
     </div>
-  )
-}
+  );
+};

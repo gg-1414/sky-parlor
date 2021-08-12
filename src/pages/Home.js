@@ -33,7 +33,7 @@ export default function Home() {
                 checkout={checkout}
                 handleCartToggle={handleCartToggle}
               />
-              <div className="relative grid grid-cols-3 gap-1">
+              <div className="illustrations relative grid grid-cols-3 gap-1">
                 <img 
                   className={`${styles.illustration} object-contain w-full md:px-10 md:py-6`}
                   src={illustration1}
@@ -50,7 +50,7 @@ export default function Home() {
                   alt="Sky parlor illustration"
                 />
               </div>
-              <div className="relative flex-col items-center gap-10 p-8 md:p-12 xl:p-14">
+              <div className="shop_section relative flex-col items-center gap-10 p-8 pb-0 md:p-12 xl:p-14">
                 <h2 className="text-4xl md:text-4xl text-left mt-4 md:mt-8 xl:mt-12 text-center">SHOP</h2>
                 <ProductList products={products} />
               </div>
