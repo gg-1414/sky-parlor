@@ -33,19 +33,19 @@ export default function Home() {
                 checkout={checkout}
                 handleCartToggle={handleCartToggle}
               />
-              <div className="relative grid md:grid-cols-3 gap-1">
+              <div className="relative grid grid-cols-3 gap-1">
                 <img 
-                  className={`${styles.illustration} w-full px-10 py-6 pt-10 md:py-6`}
+                  className={`${styles.illustration} object-contain w-full md:px-10 md:py-6`}
                   src={illustration1}
                   alt="Sky parlor illustration"
                 />
                 <img 
-                  className={`${styles.illustration} w-full px-10 py-6 md:py-6`}
+                  className={`${styles.illustration} object-contain w-full md:px-10 md:py-6`}
                   src={illustration2}
                   alt="Sky parlor illustration"
                 />
                 <img 
-                  className={`${styles.illustration} w-full px-10 py-6 pl-12 md:py-6 md:px-10`}
+                  className={`${styles.illustration} object-contain w-full md:px-10 md:py-6 md:px-10`}
                   src={illustration3}
                   alt="Sky parlor illustration"
                 />
