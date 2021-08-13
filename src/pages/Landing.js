@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import bgVideo from '../assets/sky-bg-spinning-logo.mp4';
+import bgVideoPlaceholder from '../assets/sky-bg-spinning-logo.png';
 import styles from '../styles/pages/Landing.module.scss';
 
 export default function Landing() {
@@ -10,7 +11,7 @@ export default function Landing() {
           className="object-cover m-0 h-screen w-full"
           dangerouslySetInnerHTML={{
             __html: `
-              <video class="object-cover m-0 h-screen w-full" autoplay loop muted playsinline>
+              <video class="object-cover m-0 h-screen w-full" autoplay loop muted playsinline poster=${bgVideoPlaceholder}>
                 <source src=${bgVideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>`,
