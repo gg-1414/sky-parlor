@@ -28,7 +28,7 @@ export default function LineItem({ item, updateQuantityInCart, removeLineItemInC
       <div className={styles.line_item_content}>
         <div className={styles.line_item_row}>
           <div className={styles.line_item_variant_title}>
-            {item.variant.title}
+            {item.variant.title === 'Default Title' ? '' : item.variant.title}
           </div>
           <span className={styles.line_item_title}>
             {item.title}

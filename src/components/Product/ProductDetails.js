@@ -78,7 +78,7 @@ export default function ProductDetails({ client, product, addVariantToCart }) {
 
         <div className={`${styles.ProductDetails_content} text-left p-6 md:pt-12 xl:p-12`}>
           <h2 className="text-4xl pb-3">{product.title}</h2>
-          <h3 className="text-xl">${product.variants[0].price}</h3>
+          <h3 className="text-xl">${selectedVariant.price}</h3>
 
           {sizeOptions
             ? (
