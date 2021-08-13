@@ -32,7 +32,10 @@ export default function Home() {
                 checkout={checkout}
                 handleCartToggle={handleCartToggle}
               />
-              <div className="illustrations relative grid grid-cols-3 gap-1">
+              <div 
+                className="illustrations relative grid grid-cols-3 gap-1" 
+                style={{maxHeight: "calc((100vw / 3) * 1.4)"}}
+              >
                 <img 
                   className={`${styles.illustration} object-contain w-full md:px-10 md:py-6`}
                   src={illustration1}

@@ -47,7 +47,7 @@ export default function AdminLogin({ login }) {
       }
 
       <a href="/" className="relative">
-        <i class="fa fa-arrow-left pr-4" />
+        <i className="fa fa-arrow-left pr-4" />
         Back to the main site
       </a>
     </div>
