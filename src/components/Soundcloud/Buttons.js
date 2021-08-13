@@ -13,6 +13,7 @@ const PrevButton = ({ setCurrentTrack, soundcloud, sounds, trackIndex }) => {
       className={styles.prev}
       onClick={prevTrack}
       type="button"
+      aria-label="Previous song"
     />
   );
 };
@@ -29,6 +30,7 @@ const PlayButton = ({ soundcloud, trackPlaying }) => {
       className={`${styles.play} ${trackPlaying ? styles.pause : null}`}
       onClick={playPause}
       type="button"
+      aria-label="Play song"
     />
   );
 };
@@ -46,6 +48,7 @@ const NextButton = ({ setCurrentTrack, soundcloud, sounds, trackIndex }) => {
       className={styles.next}
       onClick={nextTrack}
       type="button"
+      aria-label="Next song"
     />
   );
 };
