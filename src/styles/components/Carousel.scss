@@ -3,8 +3,8 @@
 .react-3d-carousel {
   overflow: hidden;
   width: 100vw;
-  height: 68vw !important;
-  max-height: 68vw !important;
+  height: 80vw !important;
+  max-height: 80vw !important;
   
   @media (min-width: 1280px) {
     width: 50vw !important;
@@ -30,7 +30,7 @@
     }
   
     img {
-      object-fit: cover;
+      object-fit: contain;
       width: 100vw;
   
       @media (min-width: 1280px) {
@@ -53,8 +53,9 @@
     }
   
     .slider-single-content {
-      max-height: 300px;
+      max-height: 70vw;
       width: 100vw;
+      box-shadow: none !important;
 
       @media (min-width: 768px) {
         max-height: 600px;
