@@ -10,12 +10,11 @@ import { ShopifyContext } from '../context/ShopifyContext';
 export default function Home() {
   return (
     <ShopifyContext.Consumer>
-      {({ 
-        client,
-        products, 
-        checkout, 
-        isCartOpen, 
-        handleCartToggle, 
+      {({
+        products,
+        checkout,
+        isCartOpen,
+        handleCartToggle,
         updateQuantityInCart, 
         removeLineItemInCart 
       }) => {

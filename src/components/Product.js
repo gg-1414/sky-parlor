@@ -7,9 +7,9 @@ export default function Product({ product }) {
   }
 
   const featuredImg = product.images[0];
+
   const onProductClick = () => {
-    
-    localStorage.setItem('sp_shopify_product', JSON.stringify(product));
+    console.log('clicked')
   }
 
   return (

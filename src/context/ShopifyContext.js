@@ -7,6 +7,7 @@ const baseState = {
   checkout: { lineItems: [] },
   isCartOpen: false,
   handleCartToggle: () => {},
+  fetchProduct: async () => {},
   updateQuantityInCart: async () => {},
   removeLineItemInCart: async () => {},
   addVariantToCart: async () => {},
@@ -20,6 +21,16 @@ const Shopify = () => {
 
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);
+  }
+
+  async function fetchProduct(productId) {
+    if (!client) return;
+    try {
+      const product = await client.product.fetch(productId);
+      return product;
+    } catch (err) {
+      console.error('Error fetching product: ', err);
+    }
   }
 
   async function updateQuantityInCart(lineItemId, quantity) {
@@ -81,7 +92,7 @@ const Shopify = () => {
         const checkout = await client.checkout.create();
         localStorage.setItem('sp_shopify_checkoutId', checkout.id);
       } catch (err) {
-        console.log('Error creating checkout: ', err);
+        console.error('Error creating checkout: ', err);
       }
     }
 
@@ -107,6 +118,7 @@ const Shopify = () => {
     checkout,
     isCartOpen,
     handleCartToggle,
+    fetchProduct,
     updateQuantityInCart,
     removeLineItemInCart,
     addVariantToCart,

@@ -5,25 +5,24 @@ import styles from '../../styles/pages/Product.module.scss';
 import '../../styles/components/Carousel.scss';
 
 export default function ProductDetails({ client, product, addVariantToCart }) {
-  console.log('product', product)
-
   let defaultOptionValues = {};
-  product.options.forEach((selector) => {
+
+  product.options?.forEach((selector) => {
     defaultOptionValues[selector.name] = selector.values[0].value;
   })
 
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
   const [selectedOptions, setSelectedOptions] = useState(defaultOptionValues);
   const [activeIndex, setActiveIndex] = useState(0);
- 
+
   const imageCarousel = () => {
     const images = product.images.map(image => {
       return (
         <img src={image.src} alt={image.altText || product.title} />
-      )
-    })
+      );
+    });
     return <Carousel slides={images} />
-  }
+  };
 
   const sizeOptions = product.options.filter((option) => {
     return option.name.toLowerCase() === "size";
@@ -36,7 +35,7 @@ export default function ProductDetails({ client, product, addVariantToCart }) {
     setSelectedOptions(selectedOptionsCopy);
     setSelectedVariant(client.product.helpers.variantForOptions(product, selectedOptionsCopy))
     setActiveIndex(parseInt(e.target.dataset.index));
-  }
+  };
 
   const addToCartBtn = () => {
     if (selectedVariant.available) {
@@ -62,7 +61,6 @@ export default function ProductDetails({ client, product, addVariantToCart }) {
   
   const details = () => {
     const description = product.descriptionHtml;
-
     return (
       <div className={`${styles.details_wrapper} pt-8 mt-6`}>
         <div
