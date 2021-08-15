@@ -1,15 +1,9 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bgVideo from '../assets/sky-bg-spinning-logo.mp4';
 import bgVideoPlaceholder from '../assets/sky-bg-spinning-logo.png';
 import styles from '../styles/pages/Landing.module.scss';
 
 export default function Landing() {
-  useEffect(() => {
-    const video = document.getElementById("landing-video");
-    video.play();
-  }, [])
-
   return (
     <div className="relative">
       <Link to="/home">
@@ -20,7 +14,13 @@ export default function Landing() {
               <video id="landing-video" class="object-cover m-0 h-screen w-full" autoplay loop muted playsinline poster=${bgVideoPlaceholder}>
                 <source src=${bgVideo} type="video/mp4" />
                 Your browser does not support the video tag.
-              </video>`,
+              </video>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  const video = document.getElementById("landing-video");
+                  video.play();
+                })
+              </script>`,
           }}
         />
       </Link>
@@ -30,4 +30,4 @@ export default function Landing() {
       </div>
     </div>
   );
-}
+};
