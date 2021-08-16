@@ -5,7 +5,7 @@ import bgVideoPlaceholder from '../assets/sky-bg-spinning-logo.png';
 import styles from '../styles/pages/Landing.module.scss';
 
 export default function Landing() {
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  // const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   return (
     <div className="relative">
