@@ -10,13 +10,13 @@ export default function Landing() {
   return (
     <div className="relative">
       <Link to="/home">
-        {isMobile && (
+        {/* {isMobile && (
           <div className="object-cover m-0 h-screen w-full">
-            <img src={bgVideoPlaceholder} alt="Background of logo and sky" className="object-cover m-0 h-screen w-full" />
+            <img src={bgGif} alt="Background of logo and sky" className="object-cover m-0 h-screen w-full" />
           </div>
-        )}
+        )} */}
 
-        {!isMobile && (
+        {/* {!isMobile && (
           <div
             className="object-cover m-0 h-screen w-full"
             dangerouslySetInnerHTML={{
@@ -27,7 +27,18 @@ export default function Landing() {
                 </video>`,
             }}
           />
-        )}
+        )} */}
+
+        <div
+          className="object-cover m-0 h-screen w-full"
+          dangerouslySetInnerHTML={{
+            __html: `
+              <video id="landing-video" class="object-cover m-0 h-screen w-full" autoplay loop muted playsinline poster=${bgVideoPlaceholder}>
+                <source src=${bgVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>`,
+          }}
+        />
       </Link>
       <div className={`${styles.label} absolute w-full px-4 top-0 right-0 flex items-center justify-between z-20"`}>
         <Link to="/admin" className="underline text-xs">Admin</Link>
