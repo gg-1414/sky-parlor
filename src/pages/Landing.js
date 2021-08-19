@@ -9,11 +9,11 @@ export default function Landing() {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   return (
-    <div className="relative">
+    <div className={`${styles.Landing} relative`}>
       <Link to="/home">
         {isMobile && (
-          <div className="object-contain m-0 h-screen w-full">
-            <img src={logoGif} alt="Background of logo and sky" className="object-contain m-0 h-screen w-full" />
+          <div className={`${styles.img_wrapper} m-0 w-full flex items-center`}>
+            <img src={logoGif} alt="Background of logo and sky" className="object-contain" />
           </div>
         )}
 

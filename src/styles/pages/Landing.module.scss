@@ -1,9 +1,17 @@
 @import '../utils.scss';
 
+.Landing {
+  height: 100vh;
+}
+
 .label {
   height: calc(40px + 1.5rem + 2px);
   border-top: 1px solid $primary;
   border-left: 1px solid $primary;
   border: 1px solid $primary;
   background: #6119272b;
+}
+
+.img_wrapper {
+  min-height: calc(100vh - 66px);
 }
