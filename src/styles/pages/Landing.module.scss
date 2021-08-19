@@ -12,6 +12,10 @@
   background: #6119272b;
 }
 
-.img_wrapper {
+.mobile_img_wrapper {
   min-height: calc(100vh - 74px);
+
+  img {
+    width: 90%;
+  }
 }

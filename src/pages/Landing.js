@@ -12,8 +12,8 @@ export default function Landing() {
     <div className={`${styles.Landing} relative`}>
       <Link to="/home">
         {isMobile && (
-          <div className={`${styles.img_wrapper} m-0 w-full flex items-center`}>
-            <img src={logoGif} alt="Background of logo and sky" className="object-contain" />
+          <div className={`${styles.mobile_img_wrapper} m-0 w-full flex items-center justify-center`}>
+            <img src={logoGif} alt="Background of logo and sky" />
           </div>
         )}
 
