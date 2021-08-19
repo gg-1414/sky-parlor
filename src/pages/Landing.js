@@ -1,22 +1,23 @@
 import { Link } from 'react-router-dom';
-// import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive'
 import bgVideo from '../assets/sky-bg-spinning-logo.mp4';
 import bgVideoPlaceholder from '../assets/sky-bg-spinning-logo.png';
+import logoGif from '../assets/logo.gif';
 import styles from '../styles/pages/Landing.module.scss';
 
 export default function Landing() {
-  // const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   return (
-    <div className="relative">
+    <div className={`${styles.Landing} relative`}>
       <Link to="/home">
-        {/* {isMobile && (
-          <div className="object-cover m-0 h-screen w-full">
-            <img src={bgGif} alt="Background of logo and sky" className="object-cover m-0 h-screen w-full" />
+        {isMobile && (
+          <div className={`${styles.mobile_img_wrapper} m-0 w-full flex items-center justify-center`}>
+            <img src={logoGif} alt="Background of logo and sky" />
           </div>
-        )} */}
+        )}
 
-        {/* {!isMobile && (
+        {!isMobile && (
           <div
             className="object-cover m-0 h-screen w-full"
             dangerouslySetInnerHTML={{
@@ -27,9 +28,9 @@ export default function Landing() {
                 </video>`,
             }}
           />
-        )} */}
+        )}
 
-        <div
+        {/* <div
           className="object-cover m-0 h-screen w-full"
           dangerouslySetInnerHTML={{
             __html: `
@@ -38,7 +39,7 @@ export default function Landing() {
                 Your browser does not support the video tag.
               </video>`,
           }}
-        />
+        /> */}
       </Link>
       <div className={`${styles.label} absolute w-full px-4 top-0 right-0 flex items-center justify-between z-20"`}>
         <Link to="/admin" className="underline text-xs">Admin</Link>
