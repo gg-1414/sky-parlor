@@ -52,8 +52,8 @@ export default function Soundcloud({ playlist }) {
 
         soundcloud.isPaused((paused) => {
           if (paused) {
-            soundcloud.play();
-            setTrackPlaying(true);
+            // soundcloud.play();
+            // setTrackPlaying(true);
           };
         })
       })
