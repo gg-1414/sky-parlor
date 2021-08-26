@@ -11,7 +11,8 @@ export default function Home() {
   const [access, setAccess] = useState(false);
   const [input, setInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const correctPasscode = "DICE";
+  // const correctPasscode = "DICE";
+  const correctPasscode = "DEMO";
 
   useEffect(() => {
     if (input.length === 4) {
