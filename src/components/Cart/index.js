@@ -29,29 +29,30 @@ export default function Cart({
 
   if (checkout) {
     return (
-      <div className={`${styles.Cart} ${isCartOpen ? styles.Cart_open : null}`}>
-        <header className={`${styles.header}`}>
-          <h2 className="text-xl">YOUR CART</h2>
-          <button onClick={handleCartToggle} className={styles.close}>
-            x
-          </button>
-        </header>
+      <div className={`${isCartOpen ? styles.Cart_open : null}`}>
+        <div className={`${styles.Cart_backdrop}`} onClick={handleCartToggle} />
+        <div className={`${styles.Cart} `}>
+          <header className={`${styles.header}`}>
+            <h2 className="text-xl">YOUR CART</h2>
+            <button onClick={handleCartToggle} className={styles.close}>
+              x
+            </button>
+          </header>
 
-        <ul className={`${styles.line_items} p-6`}>
-          {getLineItems()}
-        </ul>
+          <ul className={`${styles.line_items} p-6`}>
+            {getLineItems()}
+          </ul>
 
-
-        <div className="px-6 absolute bottom-6 w-full">
-        {!checkout.lineItems?.length
-          ? <button disabled className={styles.checkout_btn}>CHECKOUT</button>
-          : <button className={styles.checkout_btn} onClick={() => window.open(checkout.webUrl)}>CHECKOUT</button>
-        }
+          <div className="px-6 absolute bottom-6 w-full">
+            {!checkout.lineItems?.length
+              ? <button disabled className={styles.checkout_btn}>CHECKOUT</button>
+              : <button className={styles.checkout_btn} onClick={() => window.open(checkout.webUrl)}>CHECKOUT</button>
+            }
+          </div>
         </div>
       </div>
     );
   } else {
     return <div></div>
   }
-
 };

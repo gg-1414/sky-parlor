@@ -19,18 +19,8 @@ const Shopify = () => {
   const [checkout, setCheckout] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const bodyClickHandler = () => {
-    setIsCartOpen(false);
-  }
-
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);
-
-    if (isCartOpen) {
-      document.body.addEventListener("click", bodyClickHandler);
-    } else {
-      document.body.removeEventListener("click", bodyClickHandler);
-    }
   }
 
   async function fetchProduct(productId) {
