@@ -16,13 +16,8 @@ export default function MusicPlayer() {
               return -1;
             }
           })
-          console.log('latestPlaylist', latestPlaylist)
-          console.log('latestPlaylist[0].data()', latestPlaylist[0].data())
-
           const soundcloudUrl = latestPlaylist[0].data().soundcloudUrl
-          console.log('soundcloudUrl', soundcloudUrl)
           const playlistId = getPlaylistIdFromIframeScript(soundcloudUrl);
-          console.log('playlistId', playlistId)
 
           if (playlistId) {
             return (
@@ -35,7 +30,6 @@ export default function MusicPlayer() {
               <div className="music_player_empty" />
             );
           };
-
         }
       }}
     </FirestoreContext.Consumer>
