@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import Cube from './Cube';
+import logoGif from '../assets/logo.gif';
 import styles from '../styles/components/Header.module.scss';
 
 const Logo = () => {
   return (
     <Link to="/home">
-      <img
-        src={'/assets/logo.gif'}
-        alt="sky parlor spinning logo"
+      <img 
         className={`${styles.logo} m-auto fixed -right-1 md:right-6 top-1 md:top-0 z-10`}
+        src={logoGif}
+        alt="sky parlor spinning logo"
       />
     </Link>
   );

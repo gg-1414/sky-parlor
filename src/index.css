@@ -19,6 +19,9 @@ body {
   font-family: 'Devinne Swash', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Devinne Swash', sans-serif;
+  background-image: url('./assets/bg-texture.png');
+  color: #611827;
 }
 
 code {

@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import ProductList from '../components/ProductList';
 import Cart from '../components/Cart/index';
 import Header from '../components/Header';
+import Image from '../components/Image';
 import styles from '../styles/pages/Home.module.scss';
 import { ShopifyContext } from '../context/ShopifyContext';
+import logoGif from '../assets/logo.gif';
 
 export default function Home() {
   const [access, setAccess] = useState(false);
@@ -24,10 +26,10 @@ export default function Home() {
   if (!access) {
     return (
       <div className={`${styles.enter_passcode} relative`}>
-        <img
-          src={'/assets/logo.gif'}
-          alt="sky parlor spinning logo"
+        <img 
           className={`absolute max-w-xs left-2/4 transform -translate-x-2/4`}
+          src={logoGif}
+          alt="sky parlor spinning logo"
         />
         <div className={`${styles.enter_passcode_container} flex flex-col items-center justify-center`}>
           <h1 className="text-2xl my-4">Enter Passcode</h1>
@@ -77,13 +79,13 @@ export default function Home() {
                   style={{maxHeight: "calc((100vw / 3) * 1.4)"}}
                 >
                   <div className={`${styles.illustration}`}>
-                    <img src="/assets/illustration-1.png" alt={"illustration of clothing"} />
+                    <Image path={"illustration-1.png"} alt={"illustration of clothing"} />
                   </div>
                   <div className={`${styles.illustration}`}>
-                    <img src="/assets/illustration-2.png" alt={"illustration of clothing"} />
+                    <Image path={"illustration-2.png"} alt={"illustration of clothing"} />
                   </div>
                   <div className={`${styles.illustration}`}>
-                    <img src="/assets/illustration-3.png" alt={"illustration of clothing"} />
+                    <Image path={"illustration-3.png"} alt={"illustration of clothing"} />
                   </div>
                 </div>
                 <div className="shop_section relative flex-col items-center gap-10 px-8 pt-12 pb-0 md:p-12 xl:p-14">

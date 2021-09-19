@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 import bgVideo from '../assets/sky-bg-spinning-logo.mp4';
 import bgVideoPlaceholder from '../assets/sky-bg-spinning-logo.png';
+import logoGif from '../assets/logo.gif';
 import styles from '../styles/pages/Landing.module.scss';
 
 export default function Landing() {
@@ -12,10 +13,7 @@ export default function Landing() {
       <Link to="/home">
         {isMobile && (
           <div className={`${styles.mobile_img_wrapper} m-0 w-full flex items-center justify-center`}>
-            <img
-              src={'/assets/logo.gif'}
-              alt="sky parlor spinning logo"
-            />
+            <img src={logoGif} alt="Background of logo and sky" />
           </div>
         )}
 
