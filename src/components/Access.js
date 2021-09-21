@@ -37,7 +37,7 @@ export default function Access({ correctPasscode, setAccess, wrapperRef, landing
             className="p-4 w-11/12"
           />
         </form>
-        <p className="text-sm mt-4 text-red-500">{!!errorMessage ? errorMessage : null}</p>
+        <p className="text-lg mt-4 text-red-500">{!!errorMessage ? errorMessage : null}</p>
       </div>
     </div>
   );
