@@ -43,7 +43,7 @@ export default function Cart({
             {getLineItems()}
           </ul>
 
-          <div className="px-6 absolute bottom-6 w-full">
+          <div className="px-6 absolute bottom-6 w-full text-2xl">
             {!checkout.lineItems?.length
               ? <button disabled className={styles.checkout_btn}>CHECKOUT</button>
               : <button className={styles.checkout_btn} onClick={() => window.open(checkout.webUrl)}>CHECKOUT</button>
