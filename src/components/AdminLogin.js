@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from '../styles/pages/Admin.module.scss';
-import logoGif from '../assets/logo.gif';
 
 export default function AdminLogin({ login }) {
   const [errorMessage, setErrorMessage] = useState('');
@@ -21,7 +20,7 @@ export default function AdminLogin({ login }) {
 
   return (
     <div className={styles.admin}>
-      <img src={logoGif} alt="sky parlor logo" className={`${styles.logo} relative`} />
+      <img src={'/assets/logo.gif'} alt="sky parlor logo" className={`${styles.logo} relative`} />
       <form onSubmit={onSubmit} className={`${styles.form} ${styles.trying_to_login} relative p-6`}>
         <h1 className={`text-2xl`}>Login</h1>
         <input 

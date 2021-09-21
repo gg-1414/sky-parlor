@@ -34,7 +34,7 @@ export default function SoundcloudForm() {
             }
 
             <a href="/" className="relative mt-6 block">
-              <i class="fa fa-arrow-left pr-4" />
+              <i className="fa fa-arrow-left pr-4" />
               Back to the main site
             </a>
           </>
