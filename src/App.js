@@ -7,7 +7,7 @@ import {
 import { FirestoreProvider } from './context/FirestoreContext';
 import { ShopifyProvider } from './context/ShopifyContext';
 
-import MusicPlayer from './components/MusicPlayer';
+// import MusicPlayer from './components/MusicPlayer';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
 import Product from './pages/Product';
@@ -21,7 +21,7 @@ export default function App() {
     <FirestoreProvider>
       <ShopifyProvider>
         <div className="App">
-          <MusicPlayer />
+          {/* <MusicPlayer /> */}
           <Router>
             <Switch>
               <Route exact path="/home" component={Home} />

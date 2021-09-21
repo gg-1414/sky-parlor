@@ -22,6 +22,15 @@ body {
   font-family: 'Devinne Swash', sans-serif;
   background-image: url('./assets/bg-texture.png');
   color: #611827;
+
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  -webkit-perspective-origin: center;
+  perspective-origin: center;
+  overflow: hidden;
+  background-color: #222222;
+  width: 100vw;
+  height: 100vh;
 }
 
 code {

@@ -1,17 +1,5 @@
 @import '../utils.scss';
 
-.enter_passcode {
-  height: 100vh;
-}
-
-.enter_passcode_container {
-  height: calc(100vh - 8rem);
-
-  input {
-    text-align: center;
-  }
-}
-
 .Home {
   padding: 126px 0;
   overflow: hidden;
