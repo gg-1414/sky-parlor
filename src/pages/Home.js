@@ -1,7 +1,7 @@
 import ProductList from '../components/ProductList';
 import Cart from '../components/Cart/index';
 import Header from '../components/Header';
-import Image from '../components/Image';
+// import Image from '../components/Image';
 import styles from '../styles/pages/Home.module.scss';
 import { ShopifyContext } from '../context/ShopifyContext';
 
