@@ -54,13 +54,16 @@ export default function Home({ access }) {
                 style={{maxHeight: "calc((100vw / 3) * 1.4)"}}
               >
                 <div className={`${styles.illustration}`}>
-                  <Image path={"illustration-1.png"} alt={"illustration of clothing"} />
+                  {/* <Image path={"illustration-1.png"} alt={"illustration of clothing"} /> */}
+                  <img src={'/assets/illustration-1.png'} alt={"illustration of clothing"} />
                 </div>
                 <div className={`${styles.illustration}`}>
-                  <Image path={"illustration-2.png"} alt={"illustration of clothing"} />
+                  {/* <Image path={"illustration-2.png"} alt={"illustration of clothing"} /> */}
+                  <img src={'/assets/illustration-2.png'} alt={"illustration of clothing"} />
                 </div>
                 <div className={`${styles.illustration}`}>
-                  <Image path={"illustration-3.png"} alt={"illustration of clothing"} />
+                  {/* <Image path={"illustration-3.png"} alt={"illustration of clothing"} /> */}
+                  <img src={'/assets/illustration-3.png'} alt={"illustration of clothing"} />
                 </div>
               </div>
               <div className="shop_section relative flex-col items-center gap-10 px-8 pt-12 pb-0 md:p-12 xl:p-14">

@@ -22,7 +22,7 @@ export default function Image({ path, alt = "" }) {
 
   if (!!src) {
     return <img src={src} alt={alt} />;
-  } else {
-    return <div />
   }
+  
+  return <div />
 };
