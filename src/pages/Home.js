@@ -1,16 +1,11 @@
 import ProductList from '../components/ProductList';
 import Cart from '../components/Cart/index';
 import Header from '../components/Header';
-// import Image from '../components/Image';
 import styles from '../styles/pages/Home.module.scss';
 import { ShopifyContext } from '../context/ShopifyContext';
+import Zoom from 'react-reveal/Zoom';
 
 export default function Home({ access }) {
-  // check if cookie is present, if present show home page, else redirect back to "/"
-  // cookie: skyp_access=true
-  // time limit/expire time 
-  // sessionStorage instead - clears when user closes tab/window, however survives refresh
-
   const path = window.location.pathname;
   const session = sessionStorage.getItem('skyp_access');
 
@@ -54,16 +49,19 @@ export default function Home({ access }) {
                 style={{maxHeight: "calc((100vw / 3) * 1.4)"}}
               >
                 <div className={`${styles.illustration}`}>
-                  {/* <Image path={"illustration-1.png"} alt={"illustration of clothing"} /> */}
-                  <img src={'/assets/illustration-1.png'} alt={"illustration of clothing"} />
+                  <Zoom>
+                    <img src={'/assets/illustration-1.png'} alt={"illustration of clothing"} />
+                  </Zoom>
                 </div>
                 <div className={`${styles.illustration}`}>
-                  {/* <Image path={"illustration-2.png"} alt={"illustration of clothing"} /> */}
-                  <img src={'/assets/illustration-2.png'} alt={"illustration of clothing"} />
+                  <Zoom>
+                    <img src={'/assets/illustration-2.png'} alt={"illustration of clothing"} />
+                  </Zoom>
                 </div>
                 <div className={`${styles.illustration}`}>
-                  {/* <Image path={"illustration-3.png"} alt={"illustration of clothing"} /> */}
-                  <img src={'/assets/illustration-3.png'} alt={"illustration of clothing"} />
+                  <Zoom>
+                    <img src={'/assets/illustration-3.png'} alt={"illustration of clothing"} />
+                  </Zoom>
                 </div>
               </div>
               <div className="shop_section relative flex-col items-center gap-10 px-8 pt-12 pb-0 md:p-12 xl:p-14">
